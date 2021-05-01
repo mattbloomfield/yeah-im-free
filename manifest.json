@@ -1,0 +1,33 @@
+{
+  "name": "Yeah I'm Free",
+  "version": "0.0.1",
+  "description": "Connects with your Google Calendar to print out free time in emails",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Yeah I'm Free"
+  },
+  "background": {
+    "page": "dist/background.html",
+    "persistent": false
+  },
+  "permissions": ["identity", "storage"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgNgbT0yThb+EuUnaPEtaTrcW4ZOdNeUP0ew7rb7AH6jPywNQrW5LiNcR+Z3/EtlNcPC3NS01sQmyzeBcVrEhbuOf4Gq3oN9hw4GYCJwObXiSPBHoAqJdLdeBwVDUa0sw65+oj63wtvGeFrPhZlNhBUa0luvdGBNJsm4RqN11AEuTAlnBZDMY2aLA1ZHLZ2EX1IuZeNYxEhkJiK/+QA8kFNfYCc3x909qPJK11oi7GBl7+s9Ge5VceF+FM6amiBD78IVBgVPd70W7V9TKNKDibBA7IN5eeD99OUYKRIthCIIMfiGKRxbIz3IOFZXxJxko7ZIZ46XvgVm2ZPCuhu6ZPQIDAQAB",
+  "oauth2": {
+    "client_id": "936746904789-asumvmrd8efr22010kki6sm6cnq57nsi.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+      "https://www.googleapis.com/auth/calendar.freebusy",
+      "https://www.googleapis.com/auth/calendar"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["src/contentScript/contentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": ["dist/gmailJsLoader.js", "dist/extension.js"],
+  "options_page": "dist/options.html"
+}

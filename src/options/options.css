@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;700&display=swap');
+
+body {
+  background: #63C7B2;
+  font-family: 'Spartan', sans-serif;
+  font-size: 18px;
+  padding: 3em;
+}
+
+#Wrapper {
+  background: #CCDBDC;
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 1em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.option {
+  margin-bottom: .25em;
+}
+
+#SaveOptionsBtn {
+  background: #263D42;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: #162D32;
+  color: #fff;
+  font-size: 18px;
+  margin: 1em auto;
+}
+
+#Status {
+  color: #162D32;
+  font-weight: bold;
+}

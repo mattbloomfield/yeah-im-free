@@ -1,0 +1,21 @@
+{
+  "name": "yeah-im-free",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "stage": "mkdir dist || echo Dist already exists.",
+    "bundle": "browserify -o dist/gmailJsLoader.js src/resources/gmailJsLoader.js && browserify -o dist/extension.js src/contentScript/extension.js && browserify -o dist/background.js src/background/background.js && cp src/background/background.html dist/background.html && browserify -o dist/options.js src/options/options.js && cp src/options/options.html dist/options.html && cp src/options/options.css dist/options.css",
+    "devbuild": "cp ../gmail.js/src/gmail.js node_modules/gmail-js/src/ && npm run build",
+    "build": "npm run stage && npm run bundle"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gmail-js": "^1.0.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browserify": "16.5.2"
+  }
+}

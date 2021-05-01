@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yeah I'm Free</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div id="Wrapper">
+      <h1>Yeah I'm Free</h1>
+      <h2>General Configuration</h2>
+
+      <div class="options">
+        <div class="option">
+          <label>Start Time</label>
+          <input
+            type="time"
+            id="StartTime"
+            name="startTime"
+            min="06:00"
+            max="22:00"
+            required
+          />
+        </div>
+        <div class="option">
+          <label>End Time</label>
+          <input
+            type="time"
+            id="EndTime"
+            name="endTime"
+            min="06:00"
+            max="22:00"
+            required
+          />
+        </div>
+        <div class="option">
+          <label>Minimum Meeting Length</label>
+          <select id="MinimumMeetingLength">
+            <option value="15">15 min</option>
+            <option value="30">30 min</option>
+            <option value="45">45 min</option>
+            <option value="60">60 min</option>
+          </select>
+        </div>
+        <div class="option">
+          <label>Buffer Period Before/After Meetings</label>
+          <select id="BufferLength">
+            <option value="0">None</option>
+            <option value="1">1 min</option>
+            <option value="5">5 min</option>
+            <option value="10">10 min</option>
+            <option value="15">15 min</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- <h2>Blackouts</h2>
+      <div class="options">
+        <h3>Black out any recurring time periods on your calendar</h3>
+        <form>
+          <div class="option">
+            <label>Day</label>
+            <select id="Day">
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
+          </div>
+          <div class="option">
+            <label>Start Time</label>
+            <input type="time" name="blackoutStartTime" />
+          </div>
+          <div class="option">
+            <label>End Time</label>
+            <input type="time" name="blackoutEndTime" />
+          </div>
+        </form>
+      </div> -->
+
+      <button id="SaveOptionsBtn">Save All</button>
+      <div id="Status"></div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
